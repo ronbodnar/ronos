@@ -17,7 +17,7 @@ import ShareComponent from "@themeIcons/Mint-Y/actions/share.svg?react"
 import AppPlaceholderSrc from "@themeIcons/Mint-Y/apps/package-x-generic.png"
 import BrowserSrc from "@themeIcons/Mint-Y/apps/brave-browser.png"
 import ConnectComponent from "@themeIcons/Mint-Y/apps/internet-mail.png"
-import CoreFlowERPSrc from "@themeIcons/Mint-Y/apps/coreflow-erp.png"
+import CoreFlowSrc from "@themeIcons/Mint-Y/apps/coreflow.png"
 import DeliveryRouterCLISrc from "@themeIcons/Mint-Y/apps/deliveryrouter-cli.svg"
 import FilesSrc from "@themeIcons/Mint-Y/actions/xsi-folder-open-symbolic.svg?react"
 import GridOfWordsSrc from "@themeIcons/Mint-Y/apps/grid-of-words.svg"
@@ -101,7 +101,7 @@ export const sharedIconSet: Partial<ThemeIconSet> = {
   AppPlaceholder: makeIcon(AppPlaceholderSrc),
   Browser: makeIcon(BrowserSrc),
   Connect: makeIcon(ConnectComponent),
-  CoreFlowERP: makeIcon(CoreFlowERPSrc),
+  CoreFlow: makeIcon(CoreFlowSrc),
   DeliveryRouterCLI: makeIcon(DeliveryRouterCLISrc),
   Files: makeIcon(FilesSrc),
   GridOfWords: makeIcon(GridOfWordsSrc),

@@ -86,13 +86,13 @@ const LAUNCHER_METADATA = [
   },
 
   {
-    id: "coreflow_erp",
+    id: "coreflow",
     target: {
       type: "program",
       programId: "browser",
       args: {
-        title: "CoreFlow ERP",
-        url: "https://erp.ronbodnar.com/",
+        title: "CoreFlow",
+        url: "https://coreflow.ronbodnar.com/",
       },
     },
   },

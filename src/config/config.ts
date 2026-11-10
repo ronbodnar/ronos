@@ -68,8 +68,8 @@ export const config: AppConfig = {
 
   browser: {
     favorites: [
+      getProgramMeta("coreflow"),
       getProgramMeta("ng_modular_forms"),
-      getProgramMeta("coreflow_erp"),
       getProgramMeta("showcase_os"),
       getProgramMeta("grid_of_words"),
       getProgramMeta("tms"),
@@ -82,7 +82,7 @@ export const config: AppConfig = {
    * Banners are derived from the programs in the "featured" section.
    */
   softwareCenter: {
-    featured: ["ng_modular_forms", "coreflow_erp", "showcase_os", "grid_of_words"] as ProgramId[],
+    featured: ["coreflow", "ng_modular_forms", "showcase_os", "grid_of_words"] as ProgramId[],
 
     projects: ["tms", "loan_eligibility", "deliveryrouter_cli", "oed_parser"] as ProgramId[],
 

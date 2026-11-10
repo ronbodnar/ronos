@@ -135,7 +135,7 @@ export interface ThemeIconSet {
   AppPlaceholder: IconMetadata
   Browser: IconMetadata
   Connect: IconMetadata
-  CoreFlowERP: IconMetadata
+  CoreFlow: IconMetadata
   DeliveryRouterCLI: IconMetadata
   Files: IconMetadata
   GridOfWords: IconMetadata
