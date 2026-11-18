@@ -139,9 +139,9 @@ export const SYSTEM_PROGRAMS_META = [
     category: "system",
     window: {
       spawn: {
-        size: { width: 0.4, height: 0.55, unit: "%" },
-        minSize: { width: 700, height: 610 },
-        maxSize: { width: 1000, height: 610 },
+        size: { width: 0.4, height: 0.6, unit: "%" },
+        minSize: { width: 700, height: 650 },
+        maxSize: { width: 1000, height: 650 },
       },
     },
     details: {

@@ -20,17 +20,21 @@ export const SystemInfo = memo(function SystemInfo() {
       href: "mailto:ron.bodnar@outlook.com",
     },
     { label: "Role", value: "Full-Stack Software Engineer" },
-    { label: "Uptime", value: "15+ years coding (8 professionally)" },
+    { label: "Uptime", value: "15+ years coding (9 professionally)" },
     {
-      label: "Focus",
-      value: "Building scalable, user-focused systems",
-    },
-    {
-      label: "Specialities",
+      label: "Specialties",
       value: "Internal platforms & workflow automation",
     },
     {
-      label: "Extensions",
+      label: "Focus",
+      value: "Architecture, automation, and data-driven business systems",
+    },
+    {
+      label: "Approach",
+      value: "Solve the underlying problem, not just the immediate requirement",
+    },
+    {
+      label: "Interests",
       value: "Family, yorkies, audiobooks, tinkering with ideas",
     },
     {
@@ -39,9 +43,9 @@ export const SystemInfo = memo(function SystemInfo() {
       tooltip: "Core technologies applied extensively in full-stack projects",
     },
     {
-      label: "Tools & Packages",
+      label: "Tools & Frameworks",
       value: ["React", "NodeJS", "Python", "RxJS", "Docker", "GitHubActions", "Nginx"],
-      tooltip: "Familiar tools leveraged confidently in production",
+      tooltip: "Technologies and tooling used across production and independent projects",
     },
     {
       label: "Core System",
