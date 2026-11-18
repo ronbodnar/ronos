@@ -94,8 +94,8 @@ function ActionButtonPane({ url }: { url: string }) {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: "Showcase OS",
-          text: "Check this software out!",
+          title: "RonOS",
+          text: "Check out RonOS!",
           url: url,
         })
       } catch (err) {

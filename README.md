@@ -1,17 +1,17 @@
 <p align="center">
   <a href="https://ronbodnar.com/" target="_blank">
-    <img src="src/assets/icons/themes/Mint-Y/apps/showcase-os.svg" width="120" alt="Showcase OS Logo" />
+    <img src="src/assets/icons/themes/Mint-Y/apps/ronos.svg" width="120" alt="RonOS Logo" />
   </a>
 </p>
 
-<h1 align="center">Showcase OS</h1>
+<h1 align="center">RonOS</h1>
 
 <p align="center">
-  A web-based OS simulation built as an interactive developer portfolio — featuring a full window manager, process lifecycle, theming engine, and dual desktop/mobile environments.
+  An open-source web-based OS simulation built with React and TypeScript. Designed as an interactive developer portfolio and easily customizable for your own projects.
 </p>
 
 <p align="center">
-  Launch apps, move windows, and showcase your projects like a living operating system.
+  Launch applications, move and resize windows, manage processes, switch environments, customize themes, and explore a portfolio through a simulated desktop operating system.
 </p>
 
 <p align="center">
@@ -19,22 +19,22 @@
   <img src="https://img.shields.io/badge/React-18+-61dafb" />
   <img src="https://img.shields.io/badge/Vite-Bundler-646cff" />
   <img src="https://img.shields.io/badge/License-GPL--3.0-green" />
-  <img src="https://github.com/ronbodnar/showcase-os/actions/workflows/ci.yml/badge.svg" alt="CI Status" />
-  <img src="https://github.com/ronbodnar/showcase-os/actions/workflows/deploy.yml/badge.svg" alt="CD Status" />
+  <img src="https://github.com/ronbodnar/ronos/actions/workflows/ci.yml/badge.svg" alt="CI Status" />
+  <img src="https://github.com/ronbodnar/ronos/actions/workflows/deploy.yml/badge.svg" alt="CD Status" />
 </p>
 
 <br />
 
 <p align="center">
   <a href="https://ronbodnar.com/" target="_blank">
-    <img src="https://img.shields.io/badge/Launch_Showcase_OS-2ea44f?style=for-the-badge" alt="Launch Showcase OS" />
+    <img src="https://img.shields.io/badge/Launch_RonOS-2ea44f?style=for-the-badge" alt="Launch RonOS" />
   </a>
 </p>
 
 <br />
 
 <p align="center">
-  <img src="https://cdn.ronbodnar.com/images/showcase-os-preview.png" width="500" alt="Showcase OS Animated Banner" />
+  <img src="https://cdn.ronbodnar.com/images/ronos-preview.png" width="500" alt="RonOS Animated Banner" />
 </p>
 
 ## Table of Contents
@@ -58,8 +58,8 @@
 ### Clone
 
 ```
-git clone https://github.com/ronbodnar/showcase-os.git
-cd showcase-os
+git clone https://github.com/ronbodnar/ronos.git
+cd ronos
 ```
 
 ### Install Dependencies
@@ -86,8 +86,8 @@ npm run build
 ### Docker (Optional)
 
 ```
-docker build -t showcase-os .
-docker run --rm -p 8080:80 showcase-os
+docker build -t ronos .
+docker run --rm -p 8080:80 ronos
 ```
 
 Open http://localhost:8080 in your browser.
@@ -265,7 +265,6 @@ Every subsystem behaves like its real OS counterpart, but implemented in a moder
 | `programService`  | Program registration and metadata                   |
 | `gridService`     | Grid launcher placement, resizing, snapping         |
 | `launcherService` | Desktop, menu, panel, and mobile launch flows       |
-| `programService`  | In-program navigation, Program Component access     |
 | `themeService`    | Applying theme settings, asset management           |
 | `windowService`   | Focus, z‑index, resize/maximize/minimize state      |
 
@@ -300,7 +299,7 @@ Dual‑mode OS environments sharing the same services.
 
 Tooltips, context menus, dialogs, and window compositor (for live previews on the panel/taskbar)
 
-- Syle variant support
+- Style variant support
 - Positional constraints (within viewport, clamp to edge)
 - Offset support from client mouse position
 - `src/core/hooks/useOverlayPosition.ts` for consistent functionality

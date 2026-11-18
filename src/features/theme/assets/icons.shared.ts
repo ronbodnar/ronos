@@ -29,7 +29,7 @@ import OEDParserSrc from "@themeIcons/Mint-Y/apps/oed-parser.svg"
 import OSDClaimManagerSrc from "@themeIcons/Mint-Y/apps/osd-claim-manager.svg"
 import PDFViewerSrc from "@themeIcons/Mint-Y/apps/pdf-viewer.png"
 import PhotoViewerSrc from "@themeIcons/Mint-Y/apps/photo-viewer.png"
-import ShowcaseOSSrc from "@themeIcons/Mint-Y/apps/showcase-os.svg"
+import RonOSSrc from "@themeIcons/Mint-Y/apps/ronos.png"
 import SoftwareCenterSrc from "@themeIcons/Mint-Y/apps/software-center.png"
 import SystemInfoSrc from "@themeIcons/Mint-Y/apps/system-info.png"
 import SystemSettingsSrc from "@themeIcons/Mint-Y/apps/system-settings.png"
@@ -113,7 +113,7 @@ export const sharedIconSet: Partial<ThemeIconSet> = {
   OSDClaimManager: makeIcon(OSDClaimManagerSrc),
   PDFViewer: makeIcon(PDFViewerSrc),
   PhotoViewer: makeIcon(PhotoViewerSrc),
-  ShowcaseOS: makeIcon(ShowcaseOSSrc),
+  RonOS: makeIcon(RonOSSrc),
   SoftwareCenter: makeIcon(SoftwareCenterSrc),
   SystemInfo: makeIcon(SystemInfoSrc),
   SystemSettings: makeIcon(SystemSettingsSrc),

@@ -86,7 +86,7 @@ registerCommand({
       return
     }
 
-    term.writeln("\r\nshowcaseOS bash, version 1.0.0-release (xtermjs, react-typescript)")
+    term.writeln("\r\nRonOS bash, version 1.0.0-release (xtermjs, react-typescript)")
     term.writeln("These shell commands are defined internally. Type 'help' to see this list.")
     term.writeln("Type `help name` to find out more about the function `name`.\r\n")
     term.writeln("Available commands:")

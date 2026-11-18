@@ -93,8 +93,7 @@ export const PanelLauncher = memo(
         role="launcher"
         tabIndex={0}
         className={`
-            relative flex flex-col items-center hover:bg-surface 
-            ${isWindowFocused ? "bg-surface bg-opacity-50" : ""} 
+            relative flex flex-col items-center hover:scale-105
             ${isDragging || disabled ? "opacity-50" : "opacity-100"}`}
         onPointerUp={handlePointerEvent}
         onPointerDown={handlePointerEvent}

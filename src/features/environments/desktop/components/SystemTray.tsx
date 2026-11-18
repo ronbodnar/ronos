@@ -35,8 +35,8 @@ export function SystemTray() {
       {SYSTEM_TRAY_ICON_NAMES.map((icon, i) => (
         <Button
           key={"system-tray-button-" + i}
-          color="shell"
-          className="w-7 h-full flex items-center justify-center"
+          color="transparent"
+          className="w-7 h-full flex items-center justify-center hover:bg-shell/40!"
           onMouseEnter={(e) =>
             overlayService.showOverlayWithDelay(e, "tooltip", { text: getTooltip(icon) })
           }
@@ -48,7 +48,7 @@ export function SystemTray() {
 
       {/* System clock */}
       <div
-        className="h-full flex items-center text-sm px-1 text-text hover:bg-surface-alt"
+        className="h-full flex items-center text-xs px-1 text-text hover:bg-shell/40!"
         onMouseEnter={(e) =>
           overlayService.showOverlayWithDelay(e, "tooltip", {
             text: `${dateTooltip}, ${timeTooltip}`,

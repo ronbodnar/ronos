@@ -84,7 +84,7 @@ function DesktopLayout() {
         <DesktopGrid />
       </div>
 
-      <div className="bg-shell z-100">
+      <div className="bg-shell/90 border-t border-t-surface-alt z-100">
         <Panel />
       </div>
 

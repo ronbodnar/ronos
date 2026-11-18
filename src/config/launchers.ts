@@ -122,12 +122,12 @@ const LAUNCHER_METADATA = [
   },
 
   {
-    id: "showcase_os",
+    id: "ronos",
     target: {
       type: "program",
       programId: "browser",
       args: {
-        title: "Showcase OS",
+        title: "RonOS",
         url: "https://ronbodnar.com/",
       },
     },

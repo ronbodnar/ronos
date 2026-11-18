@@ -148,7 +148,7 @@ export interface ThemeIconSet {
   OSDClaimManager: IconMetadata
   PDFViewer: IconMetadata
   PhotoViewer: IconMetadata
-  ShowcaseOS: IconMetadata
+  RonOS: IconMetadata
   SystemSettings: IconMetadata
   SoftwareCenter: IconMetadata
   Shutdown: IconMetadata

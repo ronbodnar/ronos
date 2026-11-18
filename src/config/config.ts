@@ -43,7 +43,7 @@ interface AppConfig {
 
 /**
  * CONFIG
- * The main configuration file for the Showcase OS.
+ * The main configuration file for RonOS.
  * This file is used to configure the UI and behavior of the application.
  *
  */
@@ -70,7 +70,7 @@ export const config: AppConfig = {
     favorites: [
       getProgramMeta("coreflow"),
       getProgramMeta("ng_modular_forms"),
-      getProgramMeta("showcase_os"),
+      getProgramMeta("ronos"),
       getProgramMeta("grid_of_words"),
       getProgramMeta("tms"),
     ],
@@ -82,7 +82,7 @@ export const config: AppConfig = {
    * Banners are derived from the programs in the "featured" section.
    */
   softwareCenter: {
-    featured: ["coreflow", "ng_modular_forms", "showcase_os", "grid_of_words"] as ProgramId[],
+    featured: ["coreflow", "ng_modular_forms", "ronos", "grid_of_words"] as ProgramId[],
 
     projects: ["tms", "loan_eligibility", "deliveryrouter_cli", "oed_parser"] as ProgramId[],
 
@@ -96,17 +96,17 @@ export const config: AppConfig = {
   },
 
   welcome: {
-    title: "Welcome to Showcase OS",
+    title: "Welcome to RonOS",
     text: [
-      "Hi, I'm Ron Bodnar — a full stack software engineer focused on building scalable, modular software systems with a focus on architecture, data orchestration, and long-term maintainability.",
+      "Hi, I'm Ron Bodnar — a full stack software engineer who enjoys building complex software systems from the ground up.",
 
-      "Showcase OS is an interactive portfolio environment designed to present my projects, technical architecture, and engineering approach through a desktop-inspired experience.",
+      "I built RonOS as an interactive way to explore my work, projects, and technical background. Instead of a traditional portfolio, you can explore everything through a desktop environment.",
 
-      "The system is heavily inspired by operating system design patterns, combining application launchers, window management, theming, and modular UI architecture into a unified interface.",
+      "Launch applications, browse my projects, inspect technical details, or open the terminal and explore the system itself.",
 
-      "You can explore projects, launch applications, inspect technical details, and navigate the environment much like a real operating system.",
+      "Feel free to look around — there's more here than just a portfolio.",
 
-      "Ready to get started? Launch an application below.",
+      "Where would you like to start?",
     ],
     launchers: ["about", "projects", "terminal", "browser"],
   },

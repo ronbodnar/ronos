@@ -159,9 +159,9 @@ export const DEVELOPER_PROGRAMS_META = [
   },
 
   {
-    id: "showcase_os",
-    name: "Showcase OS",
-    icon: "ShowcaseOS",
+    id: "ronos",
+    name: "RonOS",
+    icon: "RonOS",
     category: "developer",
     background: {
       color: "#0F172A",
@@ -172,7 +172,7 @@ export const DEVELOPER_PROGRAMS_META = [
           "A modular React web application implementing OS-like architecture, including: processes, programs, launchers, and layered window management.",
         long: "A web-based desktop simulation where projects run as apps inside a windowed environment. It features process management, desktop and mobile layouts, and runtime theming.",
       },
-      githubUrl: "https://github.com/ronbodnar/showcase-os",
+      githubUrl: "https://github.com/ronbodnar/ronos",
       publicUrl: "https://ronbodnar.com/",
       technologies: ["React", "TypeScript", "TailwindCSS"],
       year: { start: 2025 },

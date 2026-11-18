@@ -88,7 +88,7 @@ export default function Terminal({ windowId }: TerminalProps) {
     const history: string[] = []
     let historyIndex = -1
 
-    const prompt = () => term.write("\x1b[32mron@showcase-os\x1b[30m\x1b[34m~\x1b[30m$ ")
+    const prompt = () => term.write("\x1b[32mron@ronos\x1b[30m\x1b[34m~\x1b[30m$ ")
 
     const handleCommand = async (input: string) => {
       if (!input) return
