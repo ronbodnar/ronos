@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://ronbodnar.com/" target="_blank">
-    <img src="src/assets/icons/themes/Mint-Y/apps/ronos.svg" width="120" alt="RonOS Logo" />
+    <img src="src/assets/icons/shared/apps/ronos.png" width="120" alt="RonOS Logo" />
   </a>
 </p>
 

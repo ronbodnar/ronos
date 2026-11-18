@@ -35,7 +35,7 @@ export const theme: Theme = {
     body: "Inter",
     monospace: "JetBrains Mono",
   },
-  defaultWallpaper: wallpapers.Nebula,
+  defaultWallpaper: wallpapers.Moon,
   wallpaperOptions: Object.values(wallpapers),
   icons: {
     ...defaultIconSet,
