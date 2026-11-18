@@ -1,26 +1,33 @@
-export function Loading({ message }: { message: string }) {
+export function Loading({ message, progress }: { message: string; progress?: number }) {
+  const determinate = progress !== undefined
+
   return (
-    <div className="flex flex-col gap-4 justify-center items-center w-full h-full bg-black/30 backdrop-blur-sm text-stone-200">
-      <div className="relative size-20">
-        <div
-          className="
-            absolute w-full h-full rounded-full animate-[spin_1.6s_linear_infinite]
-            bg-[conic-gradient(var(--color-accent)_0%,transparent_85%)]
-            mask-[radial-gradient(circle,transparent_60%,black_61%)]
-            "
-        ></div>
+    <div className="relative flex flex-col justify-center items-center w-full h-full bg-black text-stone-200">
+      <div className="flex flex-col items-center gap-10">
+        <h1 className="text-4xl font-light tracking-[0.35em] pl-[0.35em] text-white">
+          Ron<span className="font-semibold text-accent">OS</span>
+        </h1>
 
         <div
-          className="
-            absolute inset-0 rounded-full animate-[spin_2.2s_linear_infinite]
-            [animation-direction:reverse]
-            bg-[conic-gradient(transparent_0%,var(--color-text)_10%,transparent_20%)]
-            opacity-40
-            mask-[radial-gradient(circle,transparent_58%,black_59%)]
-          "
-        />
+          role="progressbar"
+          aria-label={message}
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-valuenow={determinate ? Math.round(progress * 100) : undefined}
+          className="relative h-0.75 w-56 overflow-hidden rounded-full bg-white/10"
+        >
+          {determinate ? (
+            <div
+              className="h-full rounded-full bg-accent shadow-[0_0_12px_var(--color-accent)] transition-[width] duration-500 ease-out"
+              style={{ width: `${progress * 100}%` }}
+            />
+          ) : (
+            <div className="absolute inset-y-0 left-0 w-2/5 rounded-full bg-accent shadow-[0_0_12px_var(--color-accent)] animate-loading-bar" />
+          )}
+        </div>
+
+        <p className="-mt-6 text-sm tracking-wider text-stone-300">{message}</p>
       </div>
-      <h2 className="text-lg">{message}</h2>
     </div>
   )
 }

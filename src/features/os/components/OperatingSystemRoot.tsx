@@ -20,23 +20,45 @@ export function OperatingSystemRoot() {
   const status = useOSStore((s) => s.status)
   const isDesktop = useMediaQuery("(min-width: 1024px)")
   const [loading, setLoading] = useState(true)
-  const [loadingMessage, setLoadingMessage] = useState("")
+  const [loadingMessage, setLoadingMessage] = useState("Starting RonOS...")
+  const [progress, setProgress] = useState(0)
 
   debugMessage("Loading Operating System Root", status, isDesktop)
 
   useEffect(() => {
-    async function setupTheme() {
-      setLoadingMessage("Loading theme assets...")
-      await themeService.initializeTheme()
+    let cancelled = false
+    const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
-      setLoading(false)
+    async function boot() {
+      setLoading(true)
+      setProgress(0.1)
+      setLoadingMessage("Starting RonOS...")
+      await wait(350)
+
+      setProgress(0.4)
+      setLoadingMessage("Loading theme assets...")
+      await Promise.all([themeService.initializeTheme(), wait(500)])
+
+      setProgress(0.75)
+      setLoadingMessage("Preparing the desktop...")
+      await wait(450)
+
+      setProgress(1)
+      setLoadingMessage("Welcome")
+      await wait(400)
+
+      if (!cancelled) setLoading(false)
     }
 
-    setupTheme()
+    boot()
 
     osService.setPlatform(isDesktop ? "desktop" : "mobile")
     windowService.closeAllWindows()
     processService.stopAllProcesses()
+
+    return () => {
+      cancelled = true
+    }
   }, [isDesktop])
 
   const UIEnvironment = isDesktop ? DesktopEnvironment : MobileEnvironment
@@ -47,9 +69,9 @@ export function OperatingSystemRoot() {
     <div
       className={`fixed inset-0 flex flex-col h-screen w-screen wallpaper transition-all duration-600`}
     >
-      {loading && <Loading message={loadingMessage} />}
+      {loading && <Loading message={loadingMessage} progress={progress} />}
       {!loading && (
-        <Suspense fallback={<Loading message={"Loading the environment..."} />}>
+        <Suspense fallback={<Loading message="Finishing up..." progress={1} />}>
           <AnimatePresence mode="wait">
             {status === "shutdown" && withMotion(<Shutdown />, `shutdown_${keyModifier}`)}
             {status === "locked" && withMotion(<LockScreen />, `locked_${keyModifier}`)}
