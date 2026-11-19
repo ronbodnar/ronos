@@ -44,7 +44,7 @@ export function OperatingSystemRoot() {
       await wait(450)
 
       setProgress(1)
-      setLoadingMessage("Welcome")
+      setLoadingMessage("Finishing up...")
       await wait(400)
 
       if (!cancelled) setLoading(false)
@@ -71,7 +71,7 @@ export function OperatingSystemRoot() {
     >
       {loading && <Loading message={loadingMessage} progress={progress} />}
       {!loading && (
-        <Suspense fallback={<Loading message="Finishing up..." progress={1} />}>
+        <Suspense fallback={<Loading message="Loading environment..." progress={1} />}>
           <AnimatePresence mode="wait">
             {status === "shutdown" && withMotion(<Shutdown />, `shutdown_${keyModifier}`)}
             {status === "locked" && withMotion(<LockScreen />, `locked_${keyModifier}`)}
