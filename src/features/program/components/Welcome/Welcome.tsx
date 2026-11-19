@@ -5,6 +5,7 @@ import { getLauncherMeta } from "@features/launcher/registry"
 import { launcherService } from "@features/launcher/services/launcherService"
 import { LauncherId } from "@features/launcher/types"
 import Icon from "@shared/components/Icon"
+import logo from "@sharedIcons/apps/ronos.png"
 
 export default function Welcome() {
   const { title, text, launchers } = config.welcome
@@ -34,9 +35,11 @@ export default function Welcome() {
   return (
     <div className="flex flex-col h-full w-full">
       <div className="flex flex-1 flex-col gap-5 p-5 text-text">
-        <h1 className="m-0 text-2xl font-bold border-b border-border-lighter text-center">
-          {title}
-        </h1>
+        <div className="flex justify-center">
+          <img src={logo} alt="RonOS Logo" className="w-16 h-16 [image-rendering:auto]" />
+        </div>
+
+        <h1 className="m-0 text-2xl font-bold text-center">{title}</h1>
 
         <div className="flex flex-col gap-5 my-4">
           {text.map((section, i) => (
