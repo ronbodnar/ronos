@@ -1,4 +1,4 @@
-import { memo, useEffect, useRef } from "react"
+import { memo, useEffect, useLayoutEffect, useRef } from "react"
 import { gridService } from "@features/grid/services/gridService"
 import { useGridStore } from "../store/useGridStore"
 import { GridProps } from "../types"
@@ -29,25 +29,32 @@ export const GridContainer = memo(function GridContainer(props: GridProps) {
 
   const lastSizeRef = useRef<GridContainerSize>(grid?.size ?? { width: 0, height: 0 })
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const container = containerRef.current
     const rect = container?.getBoundingClientRect()
+    const size = {
+      width: container?.clientWidth || 0,
+      height: container?.clientHeight || 0,
+    }
 
     ensureGrid({
       id,
       rows,
       cols,
-      size: {
-        width: container?.clientWidth || 0,
-        height: container?.clientHeight || 0,
-      },
+      size,
       position: {
         x: rect?.left || 0,
         y: rect?.top || 0,
       },
       layoutDirection,
     })
-  }, [id, rows, cols, layoutDirection, ensureGrid])
+    if (size.width > 0 && size.height > 0) {
+      setSize(id, size)
+      if (!lastSizeRef.current.width || !lastSizeRef.current.height) {
+        lastSizeRef.current = size
+      }
+    }
+  }, [id, rows, cols, layoutDirection, ensureGrid, setSize])
 
   useEffect(() => {
     if (!isGridResponsive || !containerRef.current) return
@@ -61,6 +68,8 @@ export const GridContainer = memo(function GridContainer(props: GridProps) {
         if (timeout) {
           clearTimeout(timeout)
         }
+        if (width <= 0 || height <= 0) continue
+
         timeout = setTimeout(() => {
           setSize(id, { width, height })
           windowService.reconcileWindowPositions(lastSizeRef.current)
@@ -88,8 +97,11 @@ export const GridContainer = memo(function GridContainer(props: GridProps) {
     })
 
     observer.observe(containerRef.current)
-    return () => observer.disconnect()
-  }, [id, grid, iconSize, isGridResponsive, layoutDirection, launchers, setRows, setCols, setSize])
+    return () => {
+      observer.disconnect()
+      if (timeout) clearTimeout(timeout)
+    }
+  }, [id, iconSize, isGridResponsive, layoutDirection, launchers, setRows, setCols, setSize])
 
   return <Grid {...props} ref={containerRef} rows={rows} cols={cols} />
 })
